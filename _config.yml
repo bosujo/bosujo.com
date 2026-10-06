@@ -1,0 +1,100 @@
+site: bosujo.com
+
+url:
+baseurl: 
+
+collections:
+  pages:
+    output: true
+    permalink: /:name
+  projects:
+    output: true
+    permalink: /projects/:slug
+  butterflies:
+    output: true
+    permalink: /projects/butterflies/:slug
+  saucers:
+    output: true
+    permalink: /projects/saucers/:slug
+  piercings:
+    output: true
+    permalink: /projects/piercings/:slug
+  others:
+    output: true
+    permalink: /projects/others/:slug
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  -
+    scope:
+      path: ""
+      type: "butterflies"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "saucers"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "piercings"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: ""
+      type: "others"
+    values:
+      layout: "page"
+  -
+    scope:
+      path: "images/butterflies"
+    values:
+      butterflies: true
+  -
+    scope:
+      path: "images/saucers"
+    values:
+      saucers: true
+  -
+    scope:
+      path: "images/piercings"
+    values:
+      piercings: true
+  -
+    scope:
+      path: "images/others"
+    values:
+      others: true
+
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
